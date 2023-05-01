@@ -36,10 +36,12 @@ body{
 #alertMessage {
     display: flex;
     justify-content: center;
+    align-items: center;
     border: 4px solid yellow;
     border-radius: 10px;
     background-color: yellow;
     font-size: 1.3em;
+    height: 10vh;
 }
 
 #gameIconsContainer{
@@ -53,6 +55,7 @@ body{
 
 #hud{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-size: 1.5rem;
@@ -63,6 +66,7 @@ body{
 
 #wagerChangeContainer{
     display: flex;
+    align-items: center;
     margin: 10px;
 }
 
@@ -72,11 +76,15 @@ body{
     width: 10vmin;
     font-size: 1.5rem;
     border-radius: 5px;
+    min-width: 15vmin;
+    min-height: 15vmin;
+    margin: 1vmin;
 }
 
 .wagerButton:hover{
     background-color: crimson;
     cursor: pointer;
+
 }
 
 .hudItem{
@@ -86,9 +94,9 @@ body{
 
 #spinButton{
     width: 100%;
-    height: 10vmin;
+    height: 10vh;
     background-color: red;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-shadow: 1px 1px 2px pink;
 }
 

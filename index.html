@@ -24,21 +24,24 @@
             <div id="slot3" class="icon"><img src="assets/ketchup.jpeg" width="128" height="128"></div>
         </div>
         <div id="hud">
-            <div id="wallet" class="hudItem">Wallet:<br> $100</div>
+            <div style="display: flex;">
+                <div id="wallet" class="hudItem">Wallet:<br> $100</div>
+                <div class="hudItem">Wager:<br> $10/spin</div>
+            </div>
             <div id="wagerChangeContainer" class="hudItem">
                 <div>
                     <div><button class="wagerButton">-1</button></div>
                     <div><button class="wagerButton">-5</button></div>
                 </div>
 
-                <div style="padding: 1vmin">Change <br> Wager?</div>
+                <div style="padding: 1vmin;">Change <br> Wager?</div>
 
                 <div>
                     <div><button class="wagerButton">+1</button></div>
                     <div><button class="wagerButton">+5</button></div>
                 </div>
             </div>
-            <div class="hudItem">Wager:<br> $10/spin</div>
+
         </div>
         <button id="spinButton">SPIN!</button>
     </div>
