@@ -61,17 +61,18 @@ function checkForWin(){
 
 }
 
+
 function payoutWinnings(){
 console.log(slot1Image.src)
-    if(slot1Image.src === "file:///Users/peterjacobs/portfolio-projects/projects/unit-1-project/assets/ketchup.jpeg"){
+    if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
         wallet = wallet + (wager * 2)
         walletAmount.innerText = wallet
         alert(`YOU WIN! PAYING OUT: ${wager * 2}`)
-    } else if (slot1Image.src === "file:///Users/peterjacobs/portfolio-projects/projects/unit-1-project/assets/fries.jpeg"){
+    } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
         wallet = wallet + (wager * 3)
         walletAmount.innerText = wallet
         alert(`YOU WIN! PAYING OUT: ${wager * 3}`)
-    } else if (slot1Image.src === "file:///Users/peterjacobs/portfolio-projects/projects/unit-1-project/assets/burger.jpeg"){
+    } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
         wallet = wallet + (wager * 4)
         walletAmount.innerText = wallet
         alert(`YOU WIN! PAYING OUT: ${wager * 4}`)
