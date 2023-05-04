@@ -42,6 +42,7 @@ function spin(){
     if((wallet - wager) >= 0){
         wallet = wallet - wager
         walletAmount.innerHTML = wallet
+        alertMessage.innerText = "Spinning..."
         slot1Image.src = slotItemSources[Math.floor(Math.random() * 3)]
         slot2Image.src = slotItemSources[Math.floor(Math.random() * 3)]
         slot3Image.src = slotItemSources[Math.floor(Math.random() * 3)]
@@ -66,15 +67,15 @@ function payoutWinnings(){
     if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
         wallet = wallet + (wager * 2)
         walletAmount.innerText = wallet
-        alertMessage.innerHTML = `YOU WIN $${wager * 2}`
+        alertMessage.innerHTML = `<div style="font-size: 1.2rem">YOU WIN $${wager * 2}</div>`
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
         wallet = wallet + (wager * 3)
         walletAmount.innerText = wallet
-        alertMessage.innerHTML = `YOU WIN $${wager * 3}`
+        alertMessage.innerHTML = `<div style="font-size: 1.2rem">YOU WIN $${wager * 3}</div>`
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
         wallet = wallet + (wager * 4)
         walletAmount.innerText = wallet
-        alertMessage.innerHTML = `YOU WIN $${wager * 4}`
+        alertMessage.innerHTML = `<div style="font-size: 1.2rem">YOU WIN $${wager * 4}</div>`
     } else {
         alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
     }
