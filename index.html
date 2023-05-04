@@ -25,20 +25,20 @@
         </div>
         <div id="hud">
             <div style="display: flex;">
-                <div id="wallet" class="hudItem">Wallet:<br> $100</div>
-                <div class="hudItem">Wager:<br> $10/spin</div>
+                <div id="wallet" class="hudItem">Wallet:<br> $<span id="walletAmount">ERROR</span></div>
+                <div class="hudItem">Wager:<br>$<span id="wagerAmount">ERROR</span>/spin</div>
             </div>
             <div id="wagerChangeContainer" class="hudItem">
                 <div>
-                    <div><button class="wagerButton">-1</button></div>
-                    <div><button class="wagerButton">-5</button></div>
+                    <div><button id="minusOneButton" class="wagerButton">-1</button></div>
+                    <div><button id="minusFiveButton" class="wagerButton">-5</button></div>
                 </div>
 
                 <div style="padding: 1vmin;">Change <br> Wager?</div>
 
                 <div>
-                    <div><button class="wagerButton">+1</button></div>
-                    <div><button class="wagerButton">+5</button></div>
+                    <div><button id="plusOneButton"class="wagerButton">+1</button></div>
+                    <div><button id="plusFiveButton"class="wagerButton">+5</button></div>
                 </div>
             </div>
 
@@ -47,3 +47,4 @@
     </div>
 </body>
 </html>
+
