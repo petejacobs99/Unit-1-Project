@@ -67,15 +67,15 @@ console.log(slot1Image.src)
     if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
         wallet = wallet + (wager * 2)
         walletAmount.innerText = wallet
-        alert(`YOU WIN! PAYING OUT: ${wager * 2}`)
+        alertMessage.innerHTML = `YOU WIN $${wager * 2}`
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
         wallet = wallet + (wager * 3)
         walletAmount.innerText = wallet
-        alert(`YOU WIN! PAYING OUT: ${wager * 3}`)
+        alertMessage.innerHTML = `YOU WIN $${wager * 3}`
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
         wallet = wallet + (wager * 4)
         walletAmount.innerText = wallet
-        alert(`YOU WIN! PAYING OUT: ${wager * 4}`)
+        alertMessage.innerHTML = `YOU WIN $${wager * 4}`
     } else {
         alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
     }
