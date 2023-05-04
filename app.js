@@ -63,7 +63,6 @@ function checkForWin(){
 
 
 function payoutWinnings(){
-console.log(slot1Image.src)
     if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
         wallet = wallet + (wager * 2)
         walletAmount.innerText = wallet
