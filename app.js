@@ -58,6 +58,7 @@ function checkForWin(){
         payoutWinnings()
     } else {
         win = false
+        alertMessage.innerText = `<h2>YOU LOST $${wager}!`
     }
 
 }
