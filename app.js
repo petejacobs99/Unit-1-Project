@@ -18,7 +18,8 @@ const plusOneButton = document.getElementById('plusOneButton')
 const plusFiveButton = document.getElementById('plusFiveButton')
 const wagerAmount = document.getElementById('wagerAmount')
 const walletAmount = document.getElementById('walletAmount')
-
+const modal = document.getElementById('modal')
+const modalCloseButton = document.getElementById('closeModalButton')
 
 
 	/*----- event listeners -----*/
@@ -27,7 +28,10 @@ minusOneButton.addEventListener('click', function(){changeWager(-1)})
 minusFiveButton.addEventListener('click', function(){changeWager(-5)})
 plusOneButton.addEventListener('click', function(){changeWager(1)})
 plusFiveButton.addEventListener('click', function() {changeWager(5)})
-window.addEventListener('load', init);
+window.addEventListener('load', init)
+window.addEventListener('load', openModal)
+modalCloseButton.addEventListener('click', closeModal)
+
 
 
 	/*----- functions -----*/
@@ -70,13 +74,13 @@ function payoutWinnings(){
         walletAmount.innerText = wallet
         alertMessage.innerHTML = `<h2>YOU WIN $${wager * 2}</h2>`
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
-        wallet = wallet + (wager * 3)
+        wallet = wallet + (wager * 5)
         walletAmount.innerText = wallet
-        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 3}</h2>`
+        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 5}</h2>`
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
-        wallet = wallet + (wager * 4)
+        wallet = wallet + (wager * 10)
         walletAmount.innerText = wallet
-        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 4}</h2>`
+        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 10}</h2>`
     } else {
         alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
     }
@@ -90,4 +94,12 @@ function changeWager(amountOfChange){
 } else {
     alert('Wager cannot be less than $1')
 }
+}
+
+function openModal(){
+    modal.style.display = "flex"
+}
+
+function closeModal(){
+    modal.style.display = "none"
 }

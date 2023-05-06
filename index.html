@@ -15,13 +15,24 @@
 
 <body>
 
+    <div id="modal">
+        <div  id="modalTitle"><h3>Welcome to Pete's Drive Thru!</h3></div>
+        <div>
+            <div><h4>How To Play:</h4></div>
+            <div><p>Match 3 <img class="modalImage" src="https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"> in a row to earn 2X your wager!</p></div>
+            <div><p>Match 3 <img class="modalImage" src="https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"> in a row to earn 5X your wager!</p></div>
+            <div><p>Match 3 <img class="modalImage" src="https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"> in a row to earn 10X your wager!</p></div>
+        </div>
+        <div id="modalCloseButtonContainer"><button id="closeModalButton">Close Window</button></div>
+    </div>
+
     <div id="gameContainer">
         <div id="title"><h1>Pete's Drive Thru</h1></div>
         <div id="alertMessage"><h2>Press SPIN To Start!</h2></div>
         <div id="gameIconsContainer">
-            <div id="slot1" class="icon"><img id="slot1Image" src="assets/burger.jpeg" width="128" height="128"></div>
-            <div id="slot2" class="icon"><img id="slot2Image" src="assets/fries.jpeg" width="128" height="128"></div>
-            <div id="slot3" class="icon"><img id="slot3Image" src="assets/ketchup.jpeg" width="128" height="128"></div>
+            <div id="slot1" class="icon"><img id="slot1Image" class="iconImg" src="assets/burger.jpeg" width="128" height="128"></div>
+            <div id="slot2" class="icon"><img id="slot2Image" class="iconImg" src="assets/fries.jpeg" width="128" height="128"></div>
+            <div id="slot3" class="icon"><img id="slot3Image" class="iconImg" src="assets/ketchup.jpeg" width="128" height="128"></div>
         </div>
         <div id="hud">
             <div style="display: flex;">
@@ -45,6 +56,9 @@
         </div>
         <button id="spinButton">SPIN!</button>
     </div>
+
+
+
 </body>
 </html>
 
