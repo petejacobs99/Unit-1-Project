@@ -89,15 +89,15 @@ console.log(slot1Image.src)
         payoutWinnings()
     }
    
-    if(slot1Image.src === slot5Image.src && slot5Image.src === slot9Image.src){
-        win = true
-        payoutWinnings()
-    }
+    // if(slot1Image.src === slot5Image.src && slot5Image.src === slot9Image.src){
+    //     win = true
+    //     payoutWinnings()
+    // }
 
-    if(slot7Image.src === slot5Image.src && slot5Image.src === slot3Image.src){
-        win = true
-        payoutWinnings()
-    }
+    // if(slot7Image.src === slot5Image.src && slot5Image.src === slot3Image.src){
+    //     win = true
+    //     payoutWinnings()
+    // }
    
    
     else {
