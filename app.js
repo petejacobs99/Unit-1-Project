@@ -2,14 +2,22 @@
 const slotItemSources = ['assets/burger.jpeg', 'assets/fries.jpeg', 'assets/ketchup.jpeg']
 
 	/*----- state variables -----*/
-win = false
-wallet = 100
-wager = 10
+let win = false
+let wallet = 100
+let wager = 10
+let winCount = 0
+
 
 	/*----- cached elements  -----*/
 const slot1Image = document.getElementById('slot1Image')
 const slot2Image = document.getElementById('slot2Image')
 const slot3Image = document.getElementById('slot3Image')
+const slot4Image = document.getElementById('slot4Image')
+const slot5Image = document.getElementById('slot5Image')
+const slot6Image = document.getElementById('slot6Image')
+const slot7Image = document.getElementById('slot7Image')
+const slot8Image = document.getElementById('slot8Image')
+const slot9Image = document.getElementById('slot9Image')
 const spinButton = document.getElementById('spinButton')
 const alertMessage = document.getElementById('alertMessage')
 const minusOneButton = document.getElementById('minusOneButton')
@@ -50,17 +58,41 @@ function spin(){
         slot1Image.src = slotItemSources[Math.floor(Math.random() * 3)]
         slot2Image.src = slotItemSources[Math.floor(Math.random() * 3)]
         slot3Image.src = slotItemSources[Math.floor(Math.random() * 3)]
+        slot4Image.src = slotItemSources[Math.floor(Math.random() * 3)]
+        slot5Image.src = slotItemSources[Math.floor(Math.random() * 3)]
+        slot6Image.src = slotItemSources[Math.floor(Math.random() * 3)]
+        slot7Image.src = slotItemSources[Math.floor(Math.random() * 3)]
+        slot8Image.src = slotItemSources[Math.floor(Math.random() * 3)]
+        slot9Image.src = slotItemSources[Math.floor(Math.random() * 3)]
+
     } else {
         alert("Not enough money!")
     }
     checkForWin()
 }
 
+
 function checkForWin(){
+
     if(slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src){
         win = true
         payoutWinnings()
-    } else {
+    }
+
+    if(slot4Image.src === slot5Image.src && slot5Image.src === slot6Image.src){
+        win = true
+        payoutWinnings()
+    }
+
+    if(slot7Image.src === slot8Image.src && slot8Image.src === slot9Image.src){
+        win = true
+        payoutWinnings()
+    }
+   
+   
+   
+   
+    else {
         win = false
         alertMessage.innerHTML = `<h2>YOU LOST $${wager}!</h2>`
     }
@@ -78,6 +110,38 @@ function payoutWinnings(){
         walletAmount.innerText = wallet
         alertMessage.innerHTML = `<h2>YOU WIN $${wager * 5}</h2>`
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
+        wallet = wallet + (wager * 10)
+        walletAmount.innerText = wallet
+        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 10}</h2>`
+    } else {
+        alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
+    }
+
+    if(slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
+        wallet = wallet + (wager * 2)
+        walletAmount.innerText = wallet
+        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 2}</h2>`
+    } else if (slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
+        wallet = wallet + (wager * 5)
+        walletAmount.innerText = wallet
+        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 5}</h2>`
+    } else if (slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
+        wallet = wallet + (wager * 10)
+        walletAmount.innerText = wallet
+        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 10}</h2>`
+    } else {
+        alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
+    }
+
+    if(slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
+        wallet = wallet + (wager * 2)
+        walletAmount.innerText = wallet
+        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 2}</h2>`
+    } else if (slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
+        wallet = wallet + (wager * 5)
+        walletAmount.innerText = wallet
+        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 5}</h2>`
+    } else if (slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
         wallet = wallet + (wager * 10)
         walletAmount.innerText = wallet
         alertMessage.innerHTML = `<h2>YOU WIN $${wager * 10}</h2>`
