@@ -54,7 +54,7 @@ function spin(){
     if((wallet - wager) >= 0){
         wallet = wallet - wager
         walletAmount.innerHTML = wallet
-        alertMessage.innerText = "Spinning..."
+        alertMessage.innerText = ""
         slot1Image.src = slotItemSources[Math.floor(Math.random() * 3)]
         slot2Image.src = slotItemSources[Math.floor(Math.random() * 3)]
         slot3Image.src = slotItemSources[Math.floor(Math.random() * 3)]
@@ -73,76 +73,101 @@ function spin(){
 
 
 function checkForWin(){
-console.log(slot1Image.src)
+if((slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src)
+ || (slot4Image.src === slot5Image.src && slot5Image.src === slot6Image.src)
+  || (slot7Image.src === slot8Image.src && slot8Image.src === slot9Image.src)
+   || (slot1Image.src === slot5Image.src && slot5Image.src === slot9Image.src)
+    || (slot7Image.src === slot5Image.src && slot5Image.src === slot3Image.src)){
     if(slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src){
-        win = true
-        if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg" && win === true){
+        if(getFileNameFromPath(slot1Image.src) === "ketchup.jpeg"){
             wallet = wallet + (wager * 2)
             alertMessage.innerHTML += `YOU WIN $${wager * 2} from line #1 <br>`
-            win = false
-        } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg" && win === true){
+
+        } else if (getFileNameFromPath(slot1Image.src) === "fries.jpeg"){
             wallet = wallet + (wager * 5)
             alertMessage.innerHTML += `YOU WIN $${wager * 5} from line #1 <br>`
-            win = false
+
     
-        } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg" && win === true){
+        } else if (getFileNameFromPath(slot1Image.src) === "burger.jpeg"){
             wallet = wallet + (wager * 10)
             alertMessage.innerHTML += `YOU WIN $${wager * 10} from line #1 <br>`
-            win = false
+
         }
     }
 
+    
+
     if(slot4Image.src === slot5Image.src && slot5Image.src === slot6Image.src){
-        win = true
-        if(slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg" && win === true){
+
+        if(getFileNameFromPath(slot4Image.src) === "ketchup.jpeg"){
             wallet = wallet + (wager * 2)
             alertMessage.innerHTML += `YOU WIN $${wager * 2} from line #2 <br>`
-            win = false
-        } else if (slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg" && win === true){
+
+        } else if (getFileNameFromPath(slot4Image.src) === "fries.jpeg"){
             wallet = wallet + (wager * 5)
             alertMessage.innerHTML += `YOU WIN $${wager * 5} from line #2 <br>`
-            win = false
     
-        } else if (slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg" && win === true){
+        } else if (getFileNameFromPath(slot4Image.src) === "burger.jpeg"){
             wallet = wallet + (wager * 10)
             alertMessage.innerHTML += `YOU WIN $${wager * 10} from line #2 <br>`
-            win = false
+
         }
     }
 
     if(slot7Image.src === slot8Image.src && slot8Image.src === slot9Image.src){
-        if(slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg" && win === true){
+
+        if(getFileNameFromPath(slot7Image.src) === "ketchup.jpeg"){
             wallet = wallet + (wager * 2)
             alertMessage.innerHTML += `YOU WIN $${wager * 2} from line #3 <br>`
-            win = false
-        } else if (slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg" && win === true){
+
+        } else if (getFileNameFromPath(slot7Image.src) === "fries.jpeg"){
             wallet = wallet + (wager * 5)
             alertMessage.innerHTML += `YOU WIN $${wager * 5} from line #3 <br>`
-            win = false
-        } else if (slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg" && win === true){
+
+        } else if (getFileNameFromPath(slot7Image.src) === "burger.jpeg"){
             wallet = wallet + (wager * 10)
             alertMessage.innerHTML += `YOU WIN $${wager * 10} from line #3 <br>`
-            win = false
-        } else {
-            alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
+
+        }
+    }
+
+    if(slot1Image.src === slot5Image.src && slot5Image.src === slot9Image.src){
+        if(getFileNameFromPath(slot1Image.src) === "ketchup.jpeg"){
+            wallet = wallet + (wager * 2)
+            alertMessage.innerHTML += `YOU WIN $${wager * 2} from diagonal <br>`
+
+        } else if (getFileNameFromPath(slot1Image.src) === "fries.jpeg"){
+            wallet = wallet + (wager * 5)
+            alertMessage.innerHTML += `YOU WIN $${wager * 5} from diagonal <br>`
+
+        } else if (getFileNameFromPath(slot1Image.src) === "burger.jpeg"){
+            wallet = wallet + (wager * 10)
+            alertMessage.innerHTML += `YOU WIN $${wager * 10} from diagonal <br>`
+
+        }
+    }
+
+    if(slot7Image.src === slot5Image.src && slot5Image.src === slot3Image.src){
+        if(getFileNameFromPath(slot7Image.src) === "ketchup.jpeg"){
+            wallet = wallet + (wager * 2)
+            alertMessage.innerHTML += `YOU WIN $${wager * 2} from diagonal <br>`
+
+        } else if (getFileNameFromPath(slot7Image.src) === "fries.jpeg"){
+            wallet = wallet + (wager * 5)
+            alertMessage.innerHTML += `YOU WIN $${wager * 5} from diagonal <br>`
+
+        } else if (getFileNameFromPath(slot7Image.src) === "burger.jpeg"){
+            wallet = wallet + (wager * 10)
+            alertMessage.innerHTML += `YOU WIN $${wager * 10} from diagonal <br>`
+
         }
     }
    
-    // if(slot1Image.src === slot5Image.src && slot5Image.src === slot9Image.src){
-    //     win = true
-    //     payoutWinnings()
-    // }
+} else {
+    alertMessage.innerText = `YOU LOSE $${wager}`
+}
+    
 
-    // if(slot7Image.src === slot5Image.src && slot5Image.src === slot3Image.src){
-    //     win = true
-    //     payoutWinnings()
-    // }
-   
-   
-    else {
-        win = false
-        alertMessage.innerHTML = `<h2>YOU LOST $${wager}!</h2>`
-    }
 
 }
 
@@ -163,3 +188,9 @@ function openModal(){
 function closeModal(){
     modal.style.display = "none"
 }
+
+function getFileNameFromPath(path) {
+    const parts = path.split('/');
+    const fileName = parts[parts.length - 1];
+    return fileName;
+  }
