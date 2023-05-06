@@ -10,6 +10,12 @@ body{
     justify-content: center;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
 #modal {
     position: absolute;
     display: flex;
@@ -129,10 +135,11 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border: 2px solid yellow;
     border-radius: 10px;
     background-color: yellow;
+    max-height: 50vmin;
 
 }
 
