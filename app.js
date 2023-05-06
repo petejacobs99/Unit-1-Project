@@ -73,7 +73,7 @@ function spin(){
 
 
 function checkForWin(){
-
+console.log(slot1Image.src)
     if(slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src){
         win = true
         payoutWinnings()
