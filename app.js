@@ -101,51 +101,40 @@ function checkForWin(){
 
 
 function payoutWinnings(){
-    const alertText = document.createElement("<h2>")
+    alertMessage.innerText = ""
     if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
         wallet = wallet + (wager * 2)
-        alertText.innerText = `YOU WIN $${wager * 2}`
-        alertMessage.appendChild(alertText)
+        alertMessage.innerText += `YOU WIN $${wager * 2}`
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
         wallet = wallet + (wager * 5)
-        alertText.innerText = `YOU WIN $${wager * 5}`
-        alertMessage.appendChild(alertText)
+        alertMessage.innerText += `YOU WIN $${wager * 5}`
+
     } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
         wallet = wallet + (wager * 10)
-        alertText.innerText = `YOU WIN $${wager * 10}`
-        alertMessage.appendChild(alertText)
-    } else {
-        alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
+        alertMessage.innerText += `YOU WIN $${wager * 10}`
     }
 
     if(slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
         wallet = wallet + (wager * 2)
-        walletAmount.innerText = wallet
-        alertMessage.appendChild(document.createElement) = `<h2>YOU WIN $${wager * 2}</h2>`
+        alertMessage.innerText += `YOU WIN $${wager * 2}`
     } else if (slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
         wallet = wallet + (wager * 5)
-        walletAmount.innerText = wallet
-        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 5}</h2>`
+        alertMessage.innerText += `YOU WIN $${wager * 5}`
+
     } else if (slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
         wallet = wallet + (wager * 10)
-        walletAmount.innerText = wallet
-        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 10}</h2>`
-    } else {
-        alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
+        alertMessage.innerText += `YOU WIN $${wager * 10}`
     }
 
     if(slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
         wallet = wallet + (wager * 2)
-        walletAmount.innerText = wallet
-        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 2}</h2>`
+        alertMessage.innerText += `YOU WIN $${wager * 2}`
     } else if (slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
         wallet = wallet + (wager * 5)
-        walletAmount.innerText = wallet
-        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 5}</h2>`
+        alertMessage.innerText += `YOU WIN $${wager * 5}`
     } else if (slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
         wallet = wallet + (wager * 10)
-        walletAmount.innerText = wallet
-        alertMessage.innerHTML = `<h2>YOU WIN $${wager * 10}</h2>`
+        alertMessage.innerText += `YOU WIN $${wager * 10}`
     } else {
         alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
     }
