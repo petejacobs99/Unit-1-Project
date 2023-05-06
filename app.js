@@ -71,8 +71,6 @@ function spin(){
     checkForWin()
 }
 
-
-
 function checkForWin() {
     if (slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src){
         win = true
@@ -105,7 +103,6 @@ function checkForWin() {
 
 }
 
-
 function payoutWinnings(lineNumber) {
     let message = ''
     if (lineNumber === 4) {
@@ -122,39 +119,35 @@ function payoutWinnings(lineNumber) {
 
 function getMultiplier(lineNumber) {
     switch (lineNumber) {
-        case 1:
-            return 2;
-        case 2:
-            return 5;
-        case 3:
-            return 10;
-        case 4:
-            if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
-                return 2;
-            }
-            if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
-                return 5;
-            }
-            if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
-                return 10;
-            }
-            if(slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
-                return 2;
-            }
-            if(slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
-                return 5;
-            }
-            if(slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
-                return 10;
-            }
-        default:
-            return 1;
+      case 1:
+        return 2;
+      case 2:
+        return 5;
+      case 3:
+        return 10;
+      case 4:
+        if (
+          slot1Image.src.endsWith('ketchup.jpeg') &&
+          slot7Image.src.endsWith('ketchup.jpeg')
+        ) {
+          return 2;
+        }
+        if (
+          slot1Image.src.endsWith('fries.jpeg') &&
+          slot7Image.src.endsWith('fries.jpeg')
+        ) {
+          return 5;
+        }
+        if (
+          slot1Image.src.endsWith('burger.jpeg') &&
+          slot7Image.src.endsWith('burger.jpeg')
+        ) {
+          return 10;
+        }
+      default:
+        return 1;
     }
-}
-
-
-
-
+  }
 
 function changeWager(amountOfChange){
     if((wager + amountOfChange) >= 1){
