@@ -71,78 +71,75 @@ function spin(){
     checkForWin()
 }
 
-function checkForWin() {
-    if (slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src){
+
+function checkForWin(){
+
+    if(slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src){
         win = true
-        payoutWinnings(1)
+        payoutWinnings()
     }
 
-    if (slot4Image.src === slot5Image.src && slot5Image.src === slot6Image.src){
+    if(slot4Image.src === slot5Image.src && slot5Image.src === slot6Image.src){
         win = true
-        payoutWinnings(2)
+        payoutWinnings()
     }
 
-    if (slot7Image.src === slot8Image.src && slot8Image.src === slot9Image.src){
+    if(slot7Image.src === slot8Image.src && slot8Image.src === slot9Image.src){
         win = true
-        payoutWinnings(3)
+        payoutWinnings()
     }
-
-    if (slot1Image.src === slot5Image.src && slot5Image.src === slot9Image.src){
-        win = true
-        payoutWinnings(4)
+   
+   
+   
+   
+    else {
+        win = false
+        alertMessage.innerHTML = `<h2>YOU LOST $${wager}!</h2>`
     }
-
-    if(slot3Image.src === slot5Image.src && slot5Image.src === slot7Image.src){
-        win = true
-        payoutWinnings(4)
-     } else {
-        alertMessage.innerHTML = `YOU LOSE $${wager}`
-     }
-
-
 
 }
 
-function payoutWinnings(lineNumber) {
-    let message = ''
-    let multiplier = getMultiplier(lineNumber)
-    let winnings = wager * multiplier
-  
-    if (lineNumber === 4) {
-      message = `Diagonal win! YOU WIN $${winnings}`
+
+function payoutWinnings(){
+
+    if(slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
+        wallet = wallet + (wager * 2)
+        alertMessage.innerText += `YOU WIN $${wager * 2} from line #1`
+    } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
+        wallet = wallet + (wager * 5)
+        alertMessage.innerText += `YOU WIN $${wager * 5} from line #1`
+
+    } else if (slot1Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
+        wallet = wallet + (wager * 10)
+        alertMessage.innerText += `YOU WIN $${wager * 10} from line #1`
+    }
+
+    if(slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
+        wallet = wallet + (wager * 2)
+        alertMessage.innerText += `YOU WIN $${wager * 2} from line #2`
+    } else if (slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
+        wallet = wallet + (wager * 5)
+        alertMessage.innerText += `YOU WIN $${wager * 5} from line #2`
+
+    } else if (slot4Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
+        wallet = wallet + (wager * 10)
+        alertMessage.innerText += `YOU WIN $${wager * 10} from line #2`
+    }
+
+    if(slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/ketchup.jpeg"){
+        wallet = wallet + (wager * 2)
+        alertMessage.innerText += `YOU WIN $${wager * 2} from line #3`
+    } else if (slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/fries.jpeg"){
+        wallet = wallet + (wager * 5)
+        alertMessage.innerText += `YOU WIN $${wager * 5} from line #3`
+    } else if (slot7Image.src === "https://petejacobs99.github.io/Unit-1-Project/assets/burger.jpeg"){
+        wallet = wallet + (wager * 10)
+        alertMessage.innerText += `YOU WIN $${wager * 10} from line #3`
     } else {
-      message = `YOU WIN $${winnings} from line #${lineNumber}`
+        alert("YOU WIN BUT WE ENCOUNTERED AN ERROR")
     }
-  
-    alertMessage.innerHTML = `<h2>${message}</h2>`
 
-    wallet += winnings
-    walletAmount.innerHTML = wallet
-  }
-
-function getMultiplier(lineNumber) {
-    switch (lineNumber) {
-      case 1:
-        return 2;
-      case 2:
-        return 5;
-      case 3:
-        return 10;
-      case 4:
-        if (
-          slot1Image.src.endsWith('ketchup.jpeg') && slot7Image.src.endsWith('ketchup.jpeg')) {
-          return 2;
-        }
-        if (slot1Image.src.endsWith('fries.jpeg') && slot7Image.src.endsWith('fries.jpeg')) {
-          return 5;
-        }
-        if (slot1Image.src.endsWith('burger.jpeg') && slot7Image.src.endsWith('burger.jpeg')) {
-          return 10;
-        }
-      default:
-        return 1;
-    }
-  }
+}
 
 function changeWager(amountOfChange){
     if((wager + amountOfChange) >= 1){
