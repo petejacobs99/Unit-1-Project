@@ -105,17 +105,20 @@ function checkForWin() {
 
 function payoutWinnings(lineNumber) {
     let message = ''
+    let multiplier = getMultiplier(lineNumber)
+    let winnings = wager * multiplier
+  
     if (lineNumber === 4) {
-        message = `Diagonal win! YOU WIN $${wager * getMultiplier(lineNumber)}`
+      message = `Diagonal win! YOU WIN $${winnings}`
     } else {
-        message = `YOU WIN $${wager * getMultiplier(lineNumber)} from line #${lineNumber}`
+      message = `YOU WIN $${winnings} from line #${lineNumber}`
     }
-
+  
     alertMessage.innerHTML = `<h2>${message}</h2>`
 
-    wallet += wager * getMultiplier(lineNumber)
+    wallet += winnings
     walletAmount.innerHTML = wallet
-}
+  }
 
 function getMultiplier(lineNumber) {
     switch (lineNumber) {
@@ -127,21 +130,13 @@ function getMultiplier(lineNumber) {
         return 10;
       case 4:
         if (
-          slot1Image.src.endsWith('ketchup.jpeg') &&
-          slot7Image.src.endsWith('ketchup.jpeg')
-        ) {
+          slot1Image.src.endsWith('ketchup.jpeg') && slot7Image.src.endsWith('ketchup.jpeg')) {
           return 2;
         }
-        if (
-          slot1Image.src.endsWith('fries.jpeg') &&
-          slot7Image.src.endsWith('fries.jpeg')
-        ) {
+        if (slot1Image.src.endsWith('fries.jpeg') && slot7Image.src.endsWith('fries.jpeg')) {
           return 5;
         }
-        if (
-          slot1Image.src.endsWith('burger.jpeg') &&
-          slot7Image.src.endsWith('burger.jpeg')
-        ) {
+        if (slot1Image.src.endsWith('burger.jpeg') && slot7Image.src.endsWith('burger.jpeg')) {
           return 10;
         }
       default:
