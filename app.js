@@ -1,5 +1,5 @@
 	/*----- constants -----*/
-const slotItemSources = ['assets/burger.jpeg', 'assets/fries.jpeg', 'assets/ketchup.jpeg']
+const slotItemSources = ['assets/burger.jpeg', 'assets/fries.jpeg', 'assets/ketchup.jpeg', "assets/pizza.jpeg"]
 
 	/*----- state variables -----*/
 let win = false
@@ -55,15 +55,15 @@ function spin(){
         wallet = wallet - wager
         walletAmount.innerHTML = wallet
         alertMessage.innerText = ""
-        slot1Image.src = slotItemSources[Math.floor(Math.random() * 3)]
-        slot2Image.src = slotItemSources[Math.floor(Math.random() * 3)]
-        slot3Image.src = slotItemSources[Math.floor(Math.random() * 3)]
-        slot4Image.src = slotItemSources[Math.floor(Math.random() * 3)]
-        slot5Image.src = slotItemSources[Math.floor(Math.random() * 3)]
-        slot6Image.src = slotItemSources[Math.floor(Math.random() * 3)]
-        slot7Image.src = slotItemSources[Math.floor(Math.random() * 3)]
-        slot8Image.src = slotItemSources[Math.floor(Math.random() * 3)]
-        slot9Image.src = slotItemSources[Math.floor(Math.random() * 3)]
+        slot1Image.src = slotItemSources[Math.floor(Math.random() * 4)]
+        slot2Image.src = slotItemSources[Math.floor(Math.random() * 4)]
+        slot3Image.src = slotItemSources[Math.floor(Math.random() * 4)]
+        slot4Image.src = slotItemSources[Math.floor(Math.random() * 4)]
+        slot5Image.src = slotItemSources[Math.floor(Math.random() * 4)]
+        slot6Image.src = slotItemSources[Math.floor(Math.random() * 4)]
+        slot7Image.src = slotItemSources[Math.floor(Math.random() * 4)]
+        slot8Image.src = slotItemSources[Math.floor(Math.random() * 4)]
+        slot9Image.src = slotItemSources[Math.floor(Math.random() * 4)]
 
     } else {
         alert("Not enough money!")
@@ -81,17 +81,23 @@ if((slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src)
     if(slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src){
         if(getFileNameFromPath(slot1Image.src) === "ketchup.jpeg"){
             wallet = wallet + (wager * 2)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 2} from line #1 <br>`
 
         } else if (getFileNameFromPath(slot1Image.src) === "fries.jpeg"){
             wallet = wallet + (wager * 5)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 5} from line #1 <br>`
-
     
         } else if (getFileNameFromPath(slot1Image.src) === "burger.jpeg"){
             wallet = wallet + (wager * 10)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 10} from line #1 <br>`
 
+        } else if (getFileNameFromPath(slot1Image.src) === "pizza.jpeg"){
+            wallet = wallet + (wager * 15)
+            walletAmount.innerText = wallet
+            alertMessage.innerHTML += `YOU WIN $${wager * 15} from line #1 <br>`
         }
     }
 
@@ -101,16 +107,23 @@ if((slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src)
 
         if(getFileNameFromPath(slot4Image.src) === "ketchup.jpeg"){
             wallet = wallet + (wager * 2)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 2} from line #2 <br>`
 
         } else if (getFileNameFromPath(slot4Image.src) === "fries.jpeg"){
             wallet = wallet + (wager * 5)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 5} from line #2 <br>`
     
         } else if (getFileNameFromPath(slot4Image.src) === "burger.jpeg"){
             wallet = wallet + (wager * 10)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 10} from line #2 <br>`
 
+        } else if (getFileNameFromPath(slot4Image.src) === "pizza.jpeg"){
+            wallet = wallet + (wager * 15)
+            walletAmount.innerText = wallet
+            alertMessage.innerHTML += `YOU WIN $${wager * 15} from line #2 <br>`
         }
     }
 
@@ -118,48 +131,69 @@ if((slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src)
 
         if(getFileNameFromPath(slot7Image.src) === "ketchup.jpeg"){
             wallet = wallet + (wager * 2)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 2} from line #3 <br>`
 
         } else if (getFileNameFromPath(slot7Image.src) === "fries.jpeg"){
             wallet = wallet + (wager * 5)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 5} from line #3 <br>`
 
         } else if (getFileNameFromPath(slot7Image.src) === "burger.jpeg"){
             wallet = wallet + (wager * 10)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 10} from line #3 <br>`
 
+        } else if (getFileNameFromPath(slot7Image.src) === "pizza.jpeg"){
+            wallet = wallet + (wager * 15)
+            walletAmount.innerText = wallet
+            alertMessage.innerHTML += `YOU WIN $${wager * 15} from line #4 <br>`
         }
     }
 
     if(slot1Image.src === slot5Image.src && slot5Image.src === slot9Image.src){
         if(getFileNameFromPath(slot1Image.src) === "ketchup.jpeg"){
             wallet = wallet + (wager * 2)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 2} from diagonal <br>`
 
         } else if (getFileNameFromPath(slot1Image.src) === "fries.jpeg"){
             wallet = wallet + (wager * 5)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 5} from diagonal <br>`
 
         } else if (getFileNameFromPath(slot1Image.src) === "burger.jpeg"){
             wallet = wallet + (wager * 10)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 10} from diagonal <br>`
 
+        } else if (getFileNameFromPath(slot1Image.src) === "pizza.jpeg"){
+            wallet = wallet + (wager * 15)
+            walletAmount.innerText = wallet
+            alertMessage.innerHTML += `YOU WIN $${wager * 15} from diagonal <br>`
         }
     }
 
     if(slot7Image.src === slot5Image.src && slot5Image.src === slot3Image.src){
         if(getFileNameFromPath(slot7Image.src) === "ketchup.jpeg"){
             wallet = wallet + (wager * 2)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 2} from diagonal <br>`
 
         } else if (getFileNameFromPath(slot7Image.src) === "fries.jpeg"){
             wallet = wallet + (wager * 5)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 5} from diagonal <br>`
 
         } else if (getFileNameFromPath(slot7Image.src) === "burger.jpeg"){
             wallet = wallet + (wager * 10)
+            walletAmount.innerText = wallet
             alertMessage.innerHTML += `YOU WIN $${wager * 10} from diagonal <br>`
 
+        }else if (getFileNameFromPath(slot7Image.src) === "pizza.jpeg"){
+            wallet = wallet + (wager * 15)
+            walletAmount.innerText = wallet
+            alertMessage.innerHTML += `YOU WIN $${wager * 15} from diagonal <br>`
         }
     }
    
