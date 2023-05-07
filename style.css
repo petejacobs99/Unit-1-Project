@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     color: black;
+    touch-action: manipulation;
 }
 
 body{
