@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     color: black;
-    touch-action: none;
+
 }
 
 body{
@@ -9,7 +9,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    touch-action: none;
+    touch-action: manipulation;
 }
 
 p {
