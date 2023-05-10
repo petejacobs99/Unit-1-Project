@@ -2,10 +2,8 @@
 const slotItemSources = ['assets/burger.jpeg', 'assets/fries.jpeg', 'assets/ketchup.jpeg', "assets/pizza.jpeg"]
 
 	/*----- state variables -----*/
-let win = false
 let wallet = 100
 let wager = 10
-let winCount = 0
 
 
 	/*----- cached elements  -----*/
