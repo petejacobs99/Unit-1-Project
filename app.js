@@ -98,7 +98,6 @@ if((slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src)
             alertMessage.innerHTML += `YOU WIN $${wager * 15} from line #1 <br>`
         }
     }
-
     
 
     if(slot4Image.src === slot5Image.src && slot5Image.src === slot6Image.src){
@@ -203,14 +202,13 @@ if((slot1Image.src === slot2Image.src && slot2Image.src === slot3Image.src)
 
 }
 
-
 function changeWager(amountOfChange){
     if((wager + amountOfChange) >= 1){
-    wager = wager + amountOfChange
-    wagerAmount.innerText = wager
-} else {
-    alert('Wager cannot be less than $1')
-}
+        wager = wager + amountOfChange
+        wagerAmount.innerText = wager
+    } else {
+        alert('Wager cannot be less than $1')
+    }
 }
 
 function openModal(){
