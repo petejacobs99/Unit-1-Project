@@ -75,19 +75,24 @@ p {
 
 #rowOne {
     display: flex;
+    padding: 10px;
+    gap: 10px;
 }
 
 #rowTwo {
     display: flex;
+    padding: 10px;
+    gap: 10px;
 }
 
 #rowThree {
     display: flex;
+    padding: 10px;
+    gap: 10px;
 }
 
 .icon{
     border: 3px solid yellow;
-    padding: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     background-color: white;
     height: 10vh;
@@ -121,7 +126,7 @@ p {
     border-radius: 10px;
     background-color: yellow;
     font-size: 1rem;
-    height: 5vh;
+    height: 14vh;
 }
 
 @media screen and (min-width: 768px){
@@ -222,6 +227,7 @@ button{
 .iconImg {
     height: 100%;
     width: 100%;
+
 }
 
 .modalImage {
