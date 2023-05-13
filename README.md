@@ -12,7 +12,7 @@ welcome to Pete's Drive Through! This is a basic, 5 line slot machine. set your 
 - JavaScript
 ---
 # Wireframe
-![Wireframe](https://github.com/petejacobs99/Unit-1-Project/blob/main/assets/Wireframe.png))
+![Wireframe](https://github.com/petejacobs99/Unit-1-Project/blob/main/assets/Wireframe.png)
 ___
 
 # Icebox Items
