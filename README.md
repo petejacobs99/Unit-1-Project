@@ -11,6 +11,10 @@ welcome to Pete's Drive Through! This is a basic, 5 line slot machine. set your 
 - CSS
 - JavaScript
 ---
+# Wireframe
+![Wireframe](https://github.com/petejacobs99/Unit-1-Project/blob/main/assets/Wireframe.png))
+___
+
 # Icebox Items
 - leaderboards for highest wallet amount
 - free/bonus spins
